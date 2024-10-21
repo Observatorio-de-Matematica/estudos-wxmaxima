@@ -1,0 +1,73 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Existência de limite
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+Quando o limite de um ponto da função vindo da esquerda é igual ao limite do mesmo ponto 
+vindo pela direita, dizemos que existe o limite desse ponto da função.
+
+Caso contrário, somente existem os limites laterais.
+*/
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=2*x^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,-1,4],[y,-2,10],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2,minus);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2,plus);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+No exemplo abaixo, indicamos uma função que não existe limite no ponto 3 da função.
+Isso porque os limites laterais desse ponto não coincidem.
+*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f2(x):=if x<=3 then x^2+1 else 20;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f2(x)], [x,0,5], [y,0,22], [gnuplot_postamble, "set grid;"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(x^2+1,x,3,minus);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(20,x,3,plus);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

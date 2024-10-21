@@ -1,0 +1,59 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Notação de função e conjuntos domínio e imagem
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+f:A->B
+
+f: função
+A: conjunto domínio da função
+B: conjunto imagem da função
+
+Uma função é definida por:
+- sua regra algébrica
+- seu conjunto domínio
+- e seu conjunto imagem
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=sqrt(x-1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,-1,10],[y,-1,10],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Mesmo que a regra algébrica seja a mesma, se o conjunto domínio ou imagem forem restringidos, cada configuração desses conjuntos indicará uma nova FUNÇÃO!
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Essa configuração de dóminio e imagem é uma função:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,2,4],[y,1,2],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+E essa configuração é outra função:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,5,8],[y,2,3],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

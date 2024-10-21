@@ -1,0 +1,44 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Exercício de função polinomial
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Função que descreve o modelo do objeto em queda (lei de Newton):
+
+h(t) = h_0 + v_0*t - (g/2)*t^2 , onde g é gravidade (10 m*s^-2)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(t, h_0, v_0, g):=h_0+v_0*t-(g/2)*t^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Fazer gráfico para um objeto em queda livre solto de uma altura inicial 200 m.
+
+Gráfico da altura h(t) para t>0 e quanto tempo leva para o objeto leva para alcançar o solo.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([h(t,200,0,10)],[t,0,10],[y,0,200],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(h(t,200,0,10),0,10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Resposta: 6.324555320336758 segundos
+   [wxMaxima: comment end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

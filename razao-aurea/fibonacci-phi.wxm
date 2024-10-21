@@ -1,0 +1,45 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Série Fibonacci a partir da razão áurea
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Fphi(x):=1+1/x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+phi:find_root(Fphi(x)-x,x,0.1,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Fibonacci(x):=(phi^x)/sqrt(5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([Fibonacci(x)], [x,0,10], [y,0,60], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([round(Fibonacci(x))], [x,0,10], [y,0,60], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([Fibonacci(x), round(Fibonacci(x))], [x,0,10], [y,0,60], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([Fibonacci(x),x], [x,0,10], [y,0,60], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

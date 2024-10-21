@@ -1,0 +1,112 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Funções trigonométricas
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Dado um triângulo retângulo:
+
+a : cateto oposto
+b : cateto adjacente
+c : hipotenusa
+x : angulo formado por cateto adjacente e hipotenusa
+
+relação de Pitágoras:
+
+a^2 + b^2 = c^2
+
+cosseno do ângulo x : cos(x) = b / c
+seno do ângulo x    : sin(x) = a / c
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Propriedades do seno e cosseno
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+-1 <= cos(x) <= 1 , para qualquer x
+
+-1 <= sin(x) <= 1 , para qualquer x
+
+sin(x)^2 + cos(x)^2 = 1
+
+sin(x) / cos(x) = tan(x) : tangente do ângulo x
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Medidas dos ângulos
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+π (pi) radianos = 180 graus
+
+cos(45 graus) = cos(pi / 4 radianos) = sqrt(2) / 2
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Gráficos de seno, cosseno e tangente
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([cos(x), sin(x), tan(x)],[x,-10,10], [y,-2,2], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([sin(x) / cos(x), tan(x)],[x,-10,10], [y,-2,2], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Aplicação
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Circuito RLC (Resistor, Indutor e Capacitor)
+
+I(t) = I_0 * cos(omega*t + teta_0)
+
+I      : corrente elétrica
+I(t)   : corrente elétrica ao longo do tempo (t)
+I_0    : amplitude máxima da corrente
+omega  : frequência de oscilação
+teta_0 : fase inicial
+
+Exemplo:
+
+I(t) = 2 * cos(3*t + pi)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+I(t):=2*cos(3*t+%pi);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([I(t)],[t,-10,10],[y,-5,5], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+I(t,amplitude,frequencia,inicio):=amplitude*cos(frequencia*t+inicio);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([I(t,2,3,%pi)],[t,-10,10],[y,-5,5], [gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

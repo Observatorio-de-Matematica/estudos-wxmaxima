@@ -1,0 +1,52 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Juros simples
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Função de juros simples (J):
+
+J(C,i,n), onde:
+J: função juros simples
+C: capital inicial (ou Valor Presente (VP))
+i: taxa de juros
+n: período
+
+Valor Futuro da aplicação financeira (VF):
+
+VF = C + J(C,i,n) = C(1 + in)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: section start ]
+Exemplo 1
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Considere capital inicial de C = 10000,00, capitalizado com taxa de juros i = 0.01 ao mês.
+Qual é o valor do montante VF depois de 10 meses?
+Faça gráfico mostrando o VF ao longo do tempo.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+VF(n):=10000*(1+0.01*n);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([VF],[x,0,10],[y,9000,12000],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+VF(10);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

@@ -1,0 +1,136 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Inversa de uma função
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Função injetora
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Uma função é injetora, se e somente se, para quaisquer x1 e x2 pertencentes ao domínio, tempo que:
+
+x1 != x2 --> f(x1) != f(x2)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Exemplo de função NÃO injetora:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=5;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,-5,5],[y,0,6],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Exemplo de função injetora:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=5*x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,-5,5],[y,0,6],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Função sobrejetora
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Uma função f : A --> B é sobrejetora se cada elemento da imagem de B é imagem de pelo menos um elemento de A. Em outras palavras, a imagem B de f é a totalidade do conjunto B.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Exemplo:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=3*x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,-5,5],[y,-20,20],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Função bijetora
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Uma função é bijetora quando também é injetora e sobrejetora.
+
+Toda função bijetora é inversível.
+
+f^-1(x) --> função inversa de f(x)
+
+Assim:
+
+f^-1(f(x)) = x
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Exemplo de função NÃO inversível:
+
+f : R --> [0,oo[ , f(x) = x^2
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,-5,5],[y,0,30],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Exemplo de função inversível:
+
+f : [0,oo[ --> [0,oo[ , f(x) = x^2
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,0,5],[y,0,30],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Função inversa desse exemplo:
+
+f^-1(x) = sqrt(x)
+   [wxMaxima: comment end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

@@ -1,0 +1,48 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+/*
+O domínio de uma função é o conjunto de valores onde a função admite valores bem 
+definidos. Por exemplo uma raiz quadrada não pode ter valor negativo dentro dela 
+e uma fração deve ter denominador diferente de zero. Com base nisto, determine o 
+conjunto domínio da seguinte função:
+
+C(x) = 0.2x^2 / r(x^2-1/4)
+
+x^2 - 1/4 > 0
+
+qual a raiz da equação acima?
+*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+D_cx(x):=x^2-1/4;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([D_cx(x)], [x,-1,1], [y,-1,1], [gnuplot_postamble, "set grid;"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(D_cx(x), x, -1, 0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(D_cx(x), x, 0, 1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+resposta: D de C(x) é x real, tal que x > 0.5 ou x < -0.5
+*/
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

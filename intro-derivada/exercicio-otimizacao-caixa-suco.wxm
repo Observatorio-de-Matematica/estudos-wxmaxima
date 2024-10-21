@@ -1,0 +1,133 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Conversão Litros vs Metros Cúbicos
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+1 m  = 1 m
+1 dm = 0.1 m
+1 cm = 0.01 cm
+
+1 m2  = 1 m2
+1 dm2 = 0.01 m2
+1 cm2 = 0.001 m2
+
+1 m3  = 1 m3
+1 dm3 = 0.001 m3
+1 cm3 = 0.000001 m3
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+1000 litros = 1 metro cúbico
+1000 L = 1 m3
+2 L = x m3
+
+1000x = 2 --> x = 2/1000 --> x = 0.002 m3
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+1 cm3 = 0.000001 m3
+x cm3 = 0.002 m3
+
+x * 0.000001 = 0.002 --> x = 0.002 / 0.000001 --> x = 2000 cm3
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: section start ]
+Exercício: problema de otimização da caixa de suco
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+*** problema de otimização da caixa de suco ***
+
+a: base da caixa, que deve ser quadrada (cm)
+b: altura da caixa (cm)
+
+-- volume da caixa deve ser 2L ou 2000cm3
+
+V(a,b) = a2 * b = 2000
+
+-- area da caixa recortada
+
+A(a,b) = (2 * a2) + (4 * ab)
+
+-- custo do cm2 eh R$0.01
+
+1 cm2 = R$0.01
+
+V = (a2 * b) = 2000
+A = (2 * a2) + (4 * ab)
+
+a2*b = 2000
+b = 2000/a2
+
+2*a2 + 4*a*b
+2*a2 + 4*a*(2000/a2)
+2*a2 + 8000/a
+
+A(x) = 2*x2 + 8000/x
+
+-- custo (R$) em função da base da caixa (cm)
+
+C(x) = R$0.01 * A(x)
+C(x) = 0.01 * (2*x2 + 8000/x)
+C(x) = (0.02*x2 + 80/x)
+
+Min C(x) = (0.02*x2 + 80/x)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C(x):=0.02*x^2+80/x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([C(x)], [x,0,35], [y,0,120], [gnuplot_postamble, "set grid;"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+-- se custo da caixa > R$22.00, inviabiliza o projeto
+
+C(x) - 22 = 0 --> raízes da equação
+
+c(x) = C(x) - 22 = 0
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([C(x),22], [x,0,35], [y,0,120], [gnuplot_postamble, "set grid;"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+c(x):=C(x)-22;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(c(x), x, 0.1, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(c(x), x, 5.1, 35);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+conclusão:
+custo do projeto é inviabilizado (pois mais que R$22.00), quando a base da caixa tem
+menos de 3.68 cm ou mais de 31.17 cm
+   [wxMaxima: comment end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

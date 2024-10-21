@@ -1,0 +1,56 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Juros compostos
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Função de juros compostos (JC):
+
+JC(C,i,n), onde:
+JC: função juros compostos
+C: capital inicial (ou Valor Presente (VP))
+i: taxa de juros
+n: período
+
+
+VF(VP, i, n) = VP * (1 + i)^n
+
+VF: Valor Futuro
+VP: Valor Presente
+i: taxa de juros
+n: período
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: section start ]
+Exemplo
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Considere capital inicial de C = 100.00, capitalizado com taxa de juros i = 0.02 ao mês.
+VFS: Função Valor Futuro com juros simples
+VFC: Função Valor Futuro com juros compostos
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+VFS(n):=100*(1+0.02*n);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+VFC(n):=100*(1+0.02)^n;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([VFS, VFC],[x,0,120],[y,90,1200],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

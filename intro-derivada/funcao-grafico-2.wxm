@@ -1,0 +1,28 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+/*
+A elaboração de gráficos de funções fornece informações muito importantes sobre 
+como ela se comporta, quais são os seus pontos de máximo ou de mínimo locais, 
+etc. A ferramenta Maxima permite obter os gráficos das funções. O exemplo abaixo 
+mostra a sintaxe necessária para se obter um gráfico de f(x) conhecido.
+
+De acordo com a figura abaixo, abra o Maxima e escreva exatamente a função que 
+está na primeira linha. Pressione ENTER:
+*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=5*exp(-x^2)+1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,0,5],[y,0,10]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

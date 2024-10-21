@@ -1,0 +1,139 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Soma de funções
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+O limite da soma de funções é igual a soma do limite de cada função.
+*/
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^2;
+g(x):=x+1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x)+g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2)+limit(g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Constante vezes função
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+O limite de uma constante vezes uma função é igual a essa constante 
+vezes o limite da função.
+*/
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(2*f(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+2*limit(f(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Produto de funções
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+O limite do produto de duas funções é igual ao produto do limite de cada
+função.
+*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^2+1;
+g(x):=x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x)*g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2)*limit(g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Quociente de funções
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+O limite do quociente de funções é igual ao quociente do limite de cada
+função. Contanto que o limite da função divisora seja diferente de zero.
+*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^3;
+g(x):=x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x)/g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2)/limit(g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(g(x),x,2);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

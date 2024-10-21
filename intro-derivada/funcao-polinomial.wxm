@@ -1,0 +1,39 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Funções polinomiais
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Uma função polinomial de grau n (n inteiro) é toda função que pode ser escrita na seguinte forma:
+
+f(x) := a_0 + a_1*x^1 + a_2*x^2 + ... + a_n*x^n
+
+n define o grau do polinômio
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=a_0+a_1*x^1+a_2*x^2+a_n*x^n;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Exemplo abaixo é uma função polinomial de grau 3:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=-2*x+5*x^3+3;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+As raízes de uma função polinomial f(x) correspondem a todos os valores de x para os quais f(x) = 0, e teremos um número igual ao grau do polinômio.
+   [wxMaxima: comment end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

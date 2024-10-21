@@ -1,0 +1,207 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Função exponencial
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Definição:
+
+f(x) = C^g(x)
+
+C: uma constante
+g: uma função que tbm varia conforme x
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Número e (Euller)
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+O número e pode ser estimado com  o seguinte limite:
+
+e = lim(1 + 1/x)^x | x->Inf
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lim_e(x):=(1 + 1/x)^x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lim_e(1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lim_e(10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lim_e(100);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lim_e(1000);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lim_e(10000);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Casos famosos de funções exponenciais
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+f(x) = e^x
+h(x) = e^-x
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=exp(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f],[x,-10,10],[y,-10,100],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(x):=exp(-x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([h],[x,-10,10],[y,-10,100],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Exercícios
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Exercicio 1
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Elabore o gráfico da seguinte função:
+
+f(x) = 5e^(-x^2) + 1
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=5*exp(-x^2)+1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f],[x,-2,2],[y,-10,10],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Exercicio 2 - objeto em queda livre
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+O nosso problema é muito simples: uma bolinha de aço cai de um prédio, de uma altura inicial 100m. Considere que ela caiu do repouso e que a velocidade inicial foi zero. Se g = 10 metros/segundo ao quadrado, a gravidade local, pede-se: quanto tempo esta bolinha leva para atingir o solo? Como podemos resolvê-lo na ferramenta? Considere que o nosso modelo matemático de queda livre é dado por:
+
+h(t) = 100 - 5*t^2
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(t):=100-5*t^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Os recursos solve() e find_root() do Maxima são muito semelhantes: o primeiro só pode ser usado quando uma função é solúvel em forma fechada, isto é, não envolve uma função transcendental (mistura de trigonométricas + exponenciais + polinômios) cuja solução analítica não é possível. O comando find_root é usado nos casos mais complexos (expressões transcendentais ou polinômios de grau muito alto). Este último comando deve ser usado especificando-se uma região em torno da raiz palpite, desta forma é adequado desenhar um gráfico antes de usá-lo.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve([h(t)],[t]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([h(x)],[x,-5,5],[y,-10,100],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Exercício 3
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+A função abaixo descreve a solução de uma equação diferencial que descreve o crescimento populacional P(t).
+
+P(t) = 100 / (1 + e^(-2t))
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(t):=100/(1+exp(-2*t));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([P(t)],[t,0,4],[y,0,110],[gnuplot_postamble, "set grid;"]);
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Exercício 4
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+A seguinte função abaixo, é solução da equação de crescimento populacional P(t) de uma colônia de bactérias.
+
+P(t) = 5 / (1 + e^-t)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(t):=5/(1+exp(-t));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([P(t)],[t,0,5],[y,0,6],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

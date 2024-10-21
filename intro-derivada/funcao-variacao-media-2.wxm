@@ -1,0 +1,75 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Exercícios de variação média de função
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Exercício 1
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Considerando a função:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C(x):=sqrt(x^2+1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Visto que a variação média é definida por:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(x,Δx):=(C(x+Δx)-C(x)) / Δx;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Calcular a variação média h(1, 1.5) de C(x):
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(1,1.5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Exercício 2
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Calcular a variação média da função:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^3-3*cos(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+no intervalo: [0, 0.5]
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(x, delta):=(f(x+delta)-f(x)) / delta;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(0,0.5);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

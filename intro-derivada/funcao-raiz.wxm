@@ -1,0 +1,98 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Raízes em geral
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Definição: dizemos que t_0 é a raiz do polinômio de grau n:
+
+f(x) = a_0 + a_1*x + a_2*x^2 + ... + a_n*x^n
+
+Quando f(t_0) = 0
+
+(importante: um polinômio de grau n tem até n raízes diferentes)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Raiz de grau 1
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+f(x) = a_0 + a_1*x
+
+Raiz:
+f(x) = 0
+x = - a_0 / a_1
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Raiz de grau 2
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+f(x) = a_0 + a_1*x + a_2*x^2
+
+Raízes:
+f(x) = 0
+
+x_1 = (-a_1 + sqrt(a_1^2 - 4*a_2*a_0)) / 2*a_2
+x_2 = (-a_1 - sqrt(a_1^2 - 4*a_2*a_0)) / 2*a_2
+
+Fórmula de Baskara:
+f(x) = ax^2 + bx + c = 0
+x_1 = (-b + delta) / 2a
+x_2 = (-b - delta) / 2a
+delta = sqrt(b^2 - 4ac)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Raiz de grau n
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Polinômios de grau arbitrário não possuem fórmula de raiz genérica.
+
+Logo, uma inspeção a um gráfico bem feito desta função, pode indicar onde se encontram as raízes, ou parte delas.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=1+2*x^2+x^5-0.05*x^7;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)],[x,-6,6],[y,-10,10],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Questionamento
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+raiz da função: f(x) = 0
+
+quando precisar saber valores de x para f(x) = 5,
+
+obtém-se nova funcao:
+
+h(x) = f(x) - 5
+
+e calcular h(x) = 0
+
+   [wxMaxima: comment end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

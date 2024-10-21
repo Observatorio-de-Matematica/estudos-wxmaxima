@@ -1,0 +1,130 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Razão áurea
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(a,b):=(a+b)/a;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(a,b):=a/b;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+phi = a/b
+a = phi*b
+b = a/phi
+
+phi = (a+b)/a
+phi = (a+(a/phi))/a
+
+se a = 1
+phi = (1 + (1/phi))/1
+phi = (1 + (1/phi))
+*/
+Fphi(x):=1+(1/x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([Fphi(x),x], [x,-5,5], [y,-5,5], [gnuplot_postamble, "set grid;"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+fphi(x):= Fphi(x)-x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(fphi(x),x,0.1,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+A raiz de fphi é o valor da razão áurea!
+*/
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([Fphi(x),fphi(x),x], [x,0.1,10], [y,0,10], [gnuplot_postamble, "set grid;"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+se a = 1, entao phi:
+
+phi = 1+b = 1/b
+phi = b*(1+b) = 1
+phi = b+b^2 = 1
+b^2 + b = 1
+*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+F2phi(x) := x^2 + x - 1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([F2phi(x),x],[x,-5,5],[y,-5,5],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(F2phi(x),x,-2,0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(F2phi(x),x,0,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+A raiz positiva de F2phi é o valor de b, tal que 1/b = phi
+*/
+1/0.6180339887498948;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+phi*b = 1
+*/
+1.618033988749895*0.6180339887498948;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*
+FF=1+1/x-x=0
+*/
+FF(x):=1+1/x-x;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([FF(x)],[x,-5,5],[y,-5,5],[gnuplot_postamble, "set grid;"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(FF(x),x,0.1,5);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
